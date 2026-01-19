@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "leadgen"
+version = "0.1.0"
+description = "Scalable async lead generation engine"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+
+authors = [
+  { name = "Faisal Ahmad" }
+]
+
+dependencies = [
+  "aiohttp>=3.9",
+]
+
+[project.scripts]
+leadgen = "leadgen.cli:main"
