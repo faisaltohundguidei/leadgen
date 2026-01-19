@@ -1,14 +1,8 @@
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from typing import List, Dict, Set
 
 @dataclass
-class QueryConfig:
-    query: str
-    location: str
-
-@dataclass
 class LeadGenConfig:
-    serp_results: int
     scrape_paths: List[str]
     max_concurrent_http: int
     headers: Dict[str, str]
@@ -16,5 +10,6 @@ class LeadGenConfig:
 
 @dataclass
 class LeadRequest:
-    queries: List[QueryConfig]
-    existing_domains: Set[str]
+    queries: List[str]
+    locations: List[str]
+    existing_domains: Set[str] = field(default_factory=set)
